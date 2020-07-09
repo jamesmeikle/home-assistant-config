@@ -1,0 +1,38 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+climate:
+  - platform: intesishome
+    username: !secret aircon_username
+    password: !secret aircon_password
+
+device_tracker:
+  - platform: tile
+    username: !secret tile_james_username
+    password: !secret tile_james_password
+    show_inactive: true
+
+binary_sensor:
+  - platform: mqtt
+    name: "Badgers Driveway Motion"
+    device_class: motion
+    state_topic: "blueiris/ai/bdriveway"
+    payload_on: "bdriveway"
+    off_delay: 30
+
+  - platform: mqtt
+    name: "Mecon Driveway Motion"
+    device_class: motion
+    state_topic: "blueiris/ai/mecondriveway"
+    payload_on: "mecondriveway"
+    off_delay: 30
