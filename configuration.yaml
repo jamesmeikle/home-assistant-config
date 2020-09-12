@@ -36,3 +36,27 @@ binary_sensor:
     state_topic: "blueiris/ai/mecondriveway"
     payload_on: "mecondriveway"
     off_delay: 30
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_mecondriveway
+    name: mecondriveway
+
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_bdriveway
+    name: bdriveway
+
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_birdbox
+    name: birdbox
+
+api:
+  alexa:
+    smart_home:
+
+zha:
+  zigpy_config:
+    ota:
+      otau_directory: /config/zigpy_ota
+      ikea_provider: true
+      ledvance_provider: true
