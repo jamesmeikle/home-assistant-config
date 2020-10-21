@@ -7,6 +7,8 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+  - platform: reversotts
+    language: 'Tyler-Australian-English'
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -64,14 +66,12 @@ input_select:
       - Just Left
       - Away
       - Extended Away
-
-input_select:
   life360_i_shan:
     options:
-      - Home
-      - Just Arrived
-      - Just Left
-      - Away
-      - Extended Away
-
+       - Home
+       - Just Arrived
+       - Just Left
+       - Away
+       - Extended Away
+    
 breaking_changes:
