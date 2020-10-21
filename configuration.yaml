@@ -68,10 +68,10 @@ input_select:
       - Extended Away
   life360_i_shan:
     options:
-       - Home
-       - Just Arrived
-       - Just Left
-       - Away
-       - Extended Away
-    
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+
 breaking_changes:
