@@ -4,7 +4,7 @@ default_config:
 
   discovery:
 
-# Text to speech
+# Text to speech custom component installed with HACS
 tts:
   - platform: google_translate
   - platform: reversotts
@@ -15,6 +15,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+#To get this to work I have to DNS redirect in PIhole from intesishome.com to the new domain https://accloud.intesis.com/ 
 climate:
   - platform: intesishome
     username: !secret aircon_username
@@ -26,6 +27,7 @@ device_tracker:
     password: !secret tile_james_password
     show_inactive: true
 
+# Blueiris MQTT motion sensors from camera's
 binary_sensor:
   - platform: mqtt
     name: "Badgers Driveway Motion"
@@ -41,6 +43,7 @@ binary_sensor:
     payload_on: "mecondriveway"
     off_delay: 30
 
+#Blueiris camera's
 camera:
   - platform: mjpeg
     mjpeg_url: !secret camera_url_mecondriveway
@@ -54,6 +57,7 @@ camera:
     mjpeg_url: !secret camera_url_birdbox
     name: birdbox
 
+#Custom component installed with HACS
 api:
   alexa:
     smart_home:
@@ -74,4 +78,5 @@ input_select:
       - Away
       - Extended Away
 
+#Custom component installed with HACS
 breaking_changes:
