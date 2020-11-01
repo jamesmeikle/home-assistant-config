@@ -57,7 +57,15 @@ camera:
     mjpeg_url: !secret camera_url_birdbox
     name: birdbox
 
-#Custom component installed with HACS
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_mgarage
+    name: mgarage
+
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_blackbox
+    name: blackbox
+
+    #Custom component installed with HACS
 api:
   alexa:
     smart_home:
