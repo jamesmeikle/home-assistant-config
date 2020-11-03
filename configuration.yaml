@@ -54,10 +54,6 @@ camera:
     name: bdriveway
 
   - platform: mjpeg
-    mjpeg_url: !secret camera_url_birdbox
-    name: birdbox
-
-  - platform: mjpeg
     mjpeg_url: !secret camera_url_mgarage
     name: mgarage
 
