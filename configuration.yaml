@@ -4,12 +4,6 @@ default_config:
 
   discovery:
 
-# Text to speech custom component installed with HACS
-tts:
-  - platform: google_translate
-  - platform: reversotts
-    language: 'Tyler-Australian-English'
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -81,6 +75,3 @@ input_select:
       - Just Left
       - Away
       - Extended Away
-
-#Custom component installed with HACS
-breaking_changes:
