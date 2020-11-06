@@ -75,3 +75,10 @@ input_select:
       - Just Left
       - Away
       - Extended Away
+
+# manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
+sonos:
+  media_player:
+    hosts:
+      - 10.0.40.131
+      - 10.0.40.80
