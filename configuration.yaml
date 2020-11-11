@@ -76,6 +76,12 @@ input_select:
       - Away
       - Extended Away
 
+# Node red used only notifications for power monitoring of appliances     
+input_boolean:
+  dishwashing_switch:
+  washing_switch:
+
+
 # manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
 sonos:
   media_player:
