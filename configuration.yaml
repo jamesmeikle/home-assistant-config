@@ -55,7 +55,7 @@ camera:
     mjpeg_url: !secret camera_url_blackbox
     name: blackbox
 
-    #Custom component installed with HACS
+#Custom component installed with HACS
 api:
   alexa:
     smart_home:
@@ -82,3 +82,10 @@ sonos:
     hosts:
       - 10.0.40.131
       - 10.0.40.80
+
+#Custom component installed with HACS - voice fun
+tts:
+  platform: reversotts
+  language: 'Lisa-Australian-English'
+  pitch: "100"
+  bitrate: "128k"
