@@ -15,12 +15,6 @@ climate:
     username: !secret aircon_username
     password: !secret aircon_password
 
-device_tracker:
-  - platform: tile
-    username: !secret tile_james_username
-    password: !secret tile_james_password
-    show_inactive: true
-
 # Blueiris MQTT motion sensors from camera's
 binary_sensor:
   - platform: mqtt
@@ -80,7 +74,9 @@ input_select:
 input_boolean:
   dishwashing_switch:
   washing_switch:
-
+  room1_status_switch:
+  room2_status_switch:
+  room3_status_switch:
 
 # manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
 sonos:
