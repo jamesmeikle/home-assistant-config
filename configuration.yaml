@@ -2,12 +2,19 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-  discovery:
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+zha:
+  zigpy_config:
+    network:
+      channels: [25]
+    
+    ota:
+      ikea_provider: true                        # Auto update Trådfri devices
+      #otau_directory: /path/to/your/ota/folder  # Utilize .ota files to update everything else
 
 #To get this to work I have to DNS redirect in PIhole from intesishome.com to the new domain https://accloud.intesis.com/ 
 climate:
@@ -72,8 +79,11 @@ input_select:
 
 # Node red used only notifications for power monitoring of appliances     
 input_boolean:
+  aircon_blackbox_stayoff:
   dishwashing_switch:
   washing_switch:
+  home:
+  house_guests:
   room1_status_switch:
   room2_status_switch:
   room3_status_switch:
