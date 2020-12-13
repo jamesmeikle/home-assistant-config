@@ -58,11 +58,6 @@ camera:
     mjpeg_url: !secret camera_url_blackbox
     name: blackbox
 
-#Custom component installed with HACS
-api:
-  alexa:
-    smart_home:
-
 input_select:
   life360_james:
     options:
@@ -97,9 +92,16 @@ sonos:
       - 10.0.40.131
       - 10.0.40.80
 
-#Custom component installed with HACS - voice fun
+# Custom component installed with HACS - voice fun
 tts:
   platform: reversotts
   language: 'Lisa-Australian-English'
   pitch: "100"
   bitrate: "128k"
+
+# tasmoadmin
+panel_iframe:
+  tasmoadmin:
+    title: TasmoAdmin
+    icon: 'mdi:chip'
+    url: 'http://10.0.50.206:9541'
