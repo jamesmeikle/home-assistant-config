@@ -79,6 +79,7 @@ input_boolean:
   aircon_blackbox_stayoff:
   dishwashing_switch:
   washing_switch:
+  tv_switch:
   home:
   house_guests:
   room1_status_switch:

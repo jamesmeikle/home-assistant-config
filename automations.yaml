@@ -1,0 +1,24 @@
+- id: '1608293187342'
+  alias: Blackbox Light Toggle
+  description: ''
+  trigger:
+  - platform: event
+    event_type: zha_event
+    event_data:
+      event_type: zha_event
+      data:
+        device_ieee: 00:15:8d:00:04:29:e7:36
+        unique_id: 00:15:8d:00:04:29:e7:36:1:0x0012
+        device_id: 8f0214108788780fc5bc9bcab0e9745b
+        endpoint_id: 1
+        cluster_id: 18
+        command: single
+        args:
+          value: 1
+  condition: []
+  action:
+  - type: toggle
+    device_id: 65e01806f44f2e14ffcd80d00ff60e5e
+    entity_id: light.blackbox_light_strip
+    domain: light
+  mode: single
