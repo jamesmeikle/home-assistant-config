@@ -58,6 +58,11 @@ camera:
     mjpeg_url: !secret camera_url_blackbox
     name: blackbox
 
+#DeFang (ex Wyse) Camera
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_laundrydoor
+    name: laundrydoor
+
 input_select:
   life360_james:
     options:
@@ -85,6 +90,7 @@ input_boolean:
   room1_status_switch:
   room2_status_switch:
   room3_status_switch:
+  flood_garage_entry_notification:
 
 # manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
 sonos:
