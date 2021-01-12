@@ -1,6 +1,7 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+cloud:
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -91,6 +92,7 @@ input_boolean:
   room2_status_switch:
   room3_status_switch:
   flood_garage_entry_notification:
+  tablet_network_access_switch:
 
 # manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
 sonos:
@@ -105,10 +107,3 @@ tts:
   language: 'Lisa-Australian-English'
   pitch: "100"
   bitrate: "128k"
-
-# tasmoadmin
-panel_iframe:
-  tasmoadmin:
-    title: TasmoAdmin
-    icon: 'mdi:chip'
-    url: 'http://10.0.50.206:9541'
