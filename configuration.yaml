@@ -19,6 +19,9 @@ zha:
 
 zha_map:
 
+#https://github.com/thomasloven/hass-browser_mod Kiosk interface fro HASSIO
+Browser_mod:
+
 #To get this to work I have to DNS redirect in PIhole from intesishome.com to the new domain https://accloud.intesis.com/ 
 climate:
   - platform: intesishome
@@ -93,6 +96,7 @@ input_boolean:
   room3_status_switch:
   flood_garage_entry_notification:
   tablet_network_access_switch:
+  garage_lights_switch:
 
 # manually specified Sonos IP addresses https://www.home-assistant.io/integrations/sonos#advanced-use
 sonos:
