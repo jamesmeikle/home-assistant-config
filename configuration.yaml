@@ -19,10 +19,7 @@ zha:
 
 zha_map:
 
-#https://github.com/thomasloven/hass-browser_mod Kiosk interface fro HASSIO
-Browser_mod:
-
-#To get this to work I have to DNS redirect in PIhole from intesishome.com to the new domain https://accloud.intesis.com/ 
+  #To get this to work I have to DNS redirect in PIhole from intesishome.com to the new domain https://accloud.intesis.com/ 
 climate:
   - platform: intesishome
     username: !secret aircon_username
@@ -111,3 +108,10 @@ tts:
   language: 'Lisa-Australian-English'
   pitch: "100"
   bitrate: "128k"
+
+# World Air Quality Index (WAQI) https://www.home-assistant.io/integrations/waqi/
+sensor:
+  - platform: waqi
+    token: !secret aqicn_api_token
+    locations:
+      - !secret aqicn_location
