@@ -59,6 +59,10 @@ camera:
     mjpeg_url: !secret camera_url_blackbox
     name: blackbox
 
+  - platform: mjpeg
+    mjpeg_url: !secret camera_url_bgarage
+    name: bgarage
+
 #DeFang (ex Wyse) Camera
   - platform: mjpeg
     mjpeg_url: !secret camera_url_laundrydoor
@@ -115,3 +119,43 @@ sensor:
     token: !secret aqicn_api_token
     locations:
       - !secret aqicn_location
+
+# IoTaWatt https://github.com/DotNetDann/IoTaWatt/blob/master/Example%20Home%20Assistant%20Configuration.yaml https://community.iotawatt.com/t/interfacing-with-home-assistant/1353
+  - platform: rest
+    name: IoTaWatt
+    json_attributes:
+      - inputs
+      - outputs
+    resource: http://10.0.30.105/status?inputs=yes&outputs=yes
+    value_template: '{{ value_json.inputs[0].Vrms }}v'
+    scan_interval: 5
+  
+  - platform: template
+    sensors:
+#      iotawatt_1:
+#        friendly_name_template: 'Aircon_{{ states.sensor.iotawatt.attributes["inputs"][1].channel }}'
+#        unit_of_measurement: 'Watts'
+#        value_template: '{{ states.sensor.iotawatt.attributes["inputs"][1].Watts }}'
+#      iotawatt_2:
+#        friendly_name_template: 'Aircon_{{ states.sensor.iotawatt.attributes["inputs"][2].channel }}'
+#        unit_of_measurement: 'Watts'
+#        value_template: '{{ states.sensor.iotawatt.attributes["inputs"][2].Watts }}'
+#      iotawatt_3:
+#        friendly_name_template: 'Aircon_{{ states.sensor.iotawatt.attributes["inputs"][3].channel }}'
+#        unit_of_measurement: 'Watts'
+#        value_template: '{{ states.sensor.iotawatt.attributes["inputs"][3].Watts }}'
+#      iotawatt_4:
+#        friendly_name_template: 'Blackbox_{{ states.sensor.iotawatt.attributes["inputs"][4].channel }}'
+#        unit_of_measurement: 'Watts'
+#        value_template: '{{ states.sensor.iotawatt.attributes["inputs"][4].Watts }}'  
+      iotawatt_total:
+        friendly_name_template: '{{ states.sensor.iotawatt.attributes["outputs"][1].name }}'
+        unit_of_measurement: 'Watts'
+        value_template: '{{ states.sensor.iotawatt.attributes["outputs"][1].value }}'
+
+#Roborock vacuum
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret roborock_host_meerkats
+    token: !secret roborock_token_meerkats
+    name: Max
